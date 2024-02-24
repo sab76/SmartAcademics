@@ -12,7 +12,7 @@ struct CoursesView: View {
     var body: some View {
         NavigationView {
             List(viewModel.courses) { course in
-                NavigationLink(destination: CourseView(course: course, dataFetcher: viewModel.dataFetcher)) {
+                NavigationLink(destination: CourseAssignmentsView(course: course, dataFetcher: viewModel.dataFetcher)) {
                     Text(course.name)
                 }
             }
