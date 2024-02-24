@@ -1,0 +1,734 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		691407282B87E69F003210C8 /* AcademicScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407272B87E69F003210C8 /* AcademicScheduleViewModel.swift */; };
+		6914072A2B895304003210C8 /* AcademicScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407292B895303003210C8 /* AcademicScheduleView.swift */; };
+		6914072C2B895338003210C8 /* AcademicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914072B2B895338003210C8 /* AcademicItem.swift */; };
+		6914072E2B895451003210C8 /* FitnessData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914072D2B895451003210C8 /* FitnessData.swift */; };
+		691407302B895465003210C8 /* RestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914072F2B895465003210C8 /* RestData.swift */; };
+		691407322B89547B003210C8 /*  FitnessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407312B89547B003210C8 /*  FitnessViewModel.swift */; };
+		691407342B895492003210C8 /* RestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407332B895492003210C8 /* RestViewModel.swift */; };
+		691407362B8954B3003210C8 /* FitnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407352B8954B3003210C8 /* FitnessView.swift */; };
+		691407382B8954F5003210C8 /* RestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407372B8954F5003210C8 /* RestView.swift */; };
+		6914073A2B89550D003210C8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407392B89550D003210C8 /* SettingsView.swift */; };
+		6914073C2B896E57003210C8 /* CanvasAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914073B2B896E57003210C8 /* CanvasAPIManager.swift */; };
+		6914073E2B896EC4003210C8 /* HealthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914073D2B896EC4003210C8 /* HealthDataManager.swift */; };
+		691407402B896F11003210C8 /*  LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914073F2B896F11003210C8 /*  LocationManager.swift */; };
+		691407422B896F8A003210C8 /*  RecommendationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407412B896F8A003210C8 /*  RecommendationEngine.swift */; };
+		691407442B897139003210C8 /* SleepData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407432B897139003210C8 /* SleepData.swift */; };
+		69B32CB22B86F49400600772 /* Smart_Academics__Wellness__and_Rest_PlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B32CB12B86F49400600772 /* Smart_Academics__Wellness__and_Rest_PlannerApp.swift */; };
+		69B32CB42B86F49400600772 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B32CB32B86F49400600772 /* ContentView.swift */; };
+		69B32CB62B86F49500600772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B32CB52B86F49500600772 /* Assets.xcassets */; };
+		69B32CB92B86F49500600772 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B32CB82B86F49500600772 /* Preview Assets.xcassets */; };
+		69B32CBB2B86F49500600772 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B32CBA2B86F49500600772 /* Persistence.swift */; };
+		69B32CBE2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_Planner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69B32CBC2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_Planner.xcdatamodeld */; };
+		69B32CCA2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B32CC92B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerTests.swift */; };
+		69B32CD42B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B32CD32B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerUITests.swift */; };
+		69B32CD62B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B32CD52B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerUITestsLaunchTests.swift */; };
+		69B32CE42B86F65A00600772 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B32CE32B86F65A00600772 /* HealthKit.framework */; };
+		69B32CE62B86F66500600772 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B32CE52B86F66500600772 /* CoreLocation.framework */; };
+		69B4A27B2B89A216002F1404 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B4A27A2B89A216002F1404 /* Assignment.swift */; };
+		69B4A27D2B89A8B3002F1404 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B4A27C2B89A8B3002F1404 /* ScheduleViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69B32CC62B86F49500600772 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69B32CA62B86F49400600772 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69B32CAD2B86F49400600772;
+			remoteInfo = "Smart Academics, Wellness, and Rest Planner";
+		};
+		69B32CD02B86F49500600772 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69B32CA62B86F49400600772 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69B32CAD2B86F49400600772;
+			remoteInfo = "Smart Academics, Wellness, and Rest Planner";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		691407272B87E69F003210C8 /* AcademicScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicScheduleViewModel.swift; sourceTree = "<group>"; };
+		691407292B895303003210C8 /* AcademicScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicScheduleView.swift; sourceTree = "<group>"; };
+		6914072B2B895338003210C8 /* AcademicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicItem.swift; sourceTree = "<group>"; };
+		6914072D2B895451003210C8 /* FitnessData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessData.swift; sourceTree = "<group>"; };
+		6914072F2B895465003210C8 /* RestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestData.swift; sourceTree = "<group>"; };
+		691407312B89547B003210C8 /*  FitnessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " FitnessViewModel.swift"; sourceTree = "<group>"; };
+		691407332B895492003210C8 /* RestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestViewModel.swift; sourceTree = "<group>"; };
+		691407352B8954B3003210C8 /* FitnessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessView.swift; sourceTree = "<group>"; };
+		691407372B8954F5003210C8 /* RestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestView.swift; sourceTree = "<group>"; };
+		691407392B89550D003210C8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		6914073B2B896E57003210C8 /* CanvasAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasAPIManager.swift; sourceTree = "<group>"; };
+		6914073D2B896EC4003210C8 /* HealthDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataManager.swift; sourceTree = "<group>"; };
+		6914073F2B896F11003210C8 /*  LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " LocationManager.swift"; sourceTree = "<group>"; };
+		691407412B896F8A003210C8 /*  RecommendationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " RecommendationEngine.swift"; sourceTree = "<group>"; };
+		691407432B897139003210C8 /* SleepData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepData.swift; sourceTree = "<group>"; };
+		69B32CAE2B86F49400600772 /* Smart Academics, Wellness, and Rest Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Academics, Wellness, and Rest Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69B32CB12B86F49400600772 /* Smart_Academics__Wellness__and_Rest_PlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_Academics__Wellness__and_Rest_PlannerApp.swift; sourceTree = "<group>"; };
+		69B32CB32B86F49400600772 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		69B32CB52B86F49500600772 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69B32CB82B86F49500600772 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		69B32CBA2B86F49500600772 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		69B32CBD2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_Planner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Smart_Academics__Wellness__and_Rest_Planner.xcdatamodel; sourceTree = "<group>"; };
+		69B32CBF2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_Planner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Smart_Academics__Wellness__and_Rest_Planner.entitlements; sourceTree = "<group>"; };
+		69B32CC02B86F49500600772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69B32CC52B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart Academics, Wellness, and Rest PlannerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69B32CC92B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_Academics__Wellness__and_Rest_PlannerTests.swift; sourceTree = "<group>"; };
+		69B32CCF2B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart Academics, Wellness, and Rest PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69B32CD32B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_Academics__Wellness__and_Rest_PlannerUITests.swift; sourceTree = "<group>"; };
+		69B32CD52B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_Academics__Wellness__and_Rest_PlannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		69B32CE32B86F65A00600772 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		69B32CE52B86F66500600772 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		69B4A27A2B89A216002F1404 /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		69B4A27C2B89A8B3002F1404 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69B32CAB2B86F49400600772 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69B32CE62B86F66500600772 /* CoreLocation.framework in Frameworks */,
+				69B32CE42B86F65A00600772 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B32CC22B86F49500600772 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B32CCC2B86F49500600772 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		691407452B8972E1003210C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6914072B2B895338003210C8 /* AcademicItem.swift */,
+				691407432B897139003210C8 /* SleepData.swift */,
+				6914072F2B895465003210C8 /* RestData.swift */,
+				6914072D2B895451003210C8 /* FitnessData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		691407462B897305003210C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				691407292B895303003210C8 /* AcademicScheduleView.swift */,
+				69B32CB32B86F49400600772 /* ContentView.swift */,
+				691407372B8954F5003210C8 /* RestView.swift */,
+				691407392B89550D003210C8 /* SettingsView.swift */,
+				691407352B8954B3003210C8 /* FitnessView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		691407472B89732E003210C8 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				691407312B89547B003210C8 /*  FitnessViewModel.swift */,
+				691407332B895492003210C8 /* RestViewModel.swift */,
+				691407272B87E69F003210C8 /* AcademicScheduleViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		691407482B8973EB003210C8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				6914073F2B896F11003210C8 /*  LocationManager.swift */,
+				6914073D2B896EC4003210C8 /* HealthDataManager.swift */,
+				691407412B896F8A003210C8 /*  RecommendationEngine.swift */,
+				6914073B2B896E57003210C8 /* CanvasAPIManager.swift */,
+				69B4A27A2B89A216002F1404 /* Assignment.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		69B32CA52B86F49400600772 = {
+			isa = PBXGroup;
+			children = (
+				69B4A27C2B89A8B3002F1404 /* ScheduleViewModel.swift */,
+				69B32CB02B86F49400600772 /* Smart Academics, Wellness, and Rest Planner */,
+				69B32CC82B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerTests */,
+				69B32CD22B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerUITests */,
+				69B32CAF2B86F49400600772 /* Products */,
+				69B32CE22B86F65A00600772 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		69B32CAF2B86F49400600772 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69B32CAE2B86F49400600772 /* Smart Academics, Wellness, and Rest Planner.app */,
+				69B32CC52B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerTests.xctest */,
+				69B32CCF2B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69B32CB02B86F49400600772 /* Smart Academics, Wellness, and Rest Planner */ = {
+			isa = PBXGroup;
+			children = (
+				69B32CB12B86F49400600772 /* Smart_Academics__Wellness__and_Rest_PlannerApp.swift */,
+				691407482B8973EB003210C8 /* Managers */,
+				691407472B89732E003210C8 /* View Models */,
+				691407462B897305003210C8 /* Views */,
+				691407452B8972E1003210C8 /* Model */,
+				69B32CB52B86F49500600772 /* Assets.xcassets */,
+				69B32CBA2B86F49500600772 /* Persistence.swift */,
+				69B32CBF2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_Planner.entitlements */,
+				69B32CC02B86F49500600772 /* Info.plist */,
+				69B32CBC2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_Planner.xcdatamodeld */,
+				69B32CB72B86F49500600772 /* Preview Content */,
+			);
+			path = "Smart Academics, Wellness, and Rest Planner";
+			sourceTree = "<group>";
+		};
+		69B32CB72B86F49500600772 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				69B32CB82B86F49500600772 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		69B32CC82B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				69B32CC92B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerTests.swift */,
+			);
+			path = "Smart Academics, Wellness, and Rest PlannerTests";
+			sourceTree = "<group>";
+		};
+		69B32CD22B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				69B32CD32B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerUITests.swift */,
+				69B32CD52B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerUITestsLaunchTests.swift */,
+			);
+			path = "Smart Academics, Wellness, and Rest PlannerUITests";
+			sourceTree = "<group>";
+		};
+		69B32CE22B86F65A00600772 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69B32CE52B86F66500600772 /* CoreLocation.framework */,
+				69B32CE32B86F65A00600772 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69B32CAD2B86F49400600772 /* Smart Academics, Wellness, and Rest Planner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69B32CD92B86F49500600772 /* Build configuration list for PBXNativeTarget "Smart Academics, Wellness, and Rest Planner" */;
+			buildPhases = (
+				69B32CAA2B86F49400600772 /* Sources */,
+				69B32CAB2B86F49400600772 /* Frameworks */,
+				69B32CAC2B86F49400600772 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Smart Academics, Wellness, and Rest Planner";
+			productName = "Smart Academics, Wellness, and Rest Planner";
+			productReference = 69B32CAE2B86F49400600772 /* Smart Academics, Wellness, and Rest Planner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		69B32CC42B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69B32CDC2B86F49500600772 /* Build configuration list for PBXNativeTarget "Smart Academics, Wellness, and Rest PlannerTests" */;
+			buildPhases = (
+				69B32CC12B86F49500600772 /* Sources */,
+				69B32CC22B86F49500600772 /* Frameworks */,
+				69B32CC32B86F49500600772 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69B32CC72B86F49500600772 /* PBXTargetDependency */,
+			);
+			name = "Smart Academics, Wellness, and Rest PlannerTests";
+			productName = "Smart Academics, Wellness, and Rest PlannerTests";
+			productReference = 69B32CC52B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		69B32CCE2B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69B32CDF2B86F49500600772 /* Build configuration list for PBXNativeTarget "Smart Academics, Wellness, and Rest PlannerUITests" */;
+			buildPhases = (
+				69B32CCB2B86F49500600772 /* Sources */,
+				69B32CCC2B86F49500600772 /* Frameworks */,
+				69B32CCD2B86F49500600772 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69B32CD12B86F49500600772 /* PBXTargetDependency */,
+			);
+			name = "Smart Academics, Wellness, and Rest PlannerUITests";
+			productName = "Smart Academics, Wellness, and Rest PlannerUITests";
+			productReference = 69B32CCF2B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		69B32CA62B86F49400600772 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					69B32CAD2B86F49400600772 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					69B32CC42B86F49500600772 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 69B32CAD2B86F49400600772;
+					};
+					69B32CCE2B86F49500600772 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 69B32CAD2B86F49400600772;
+					};
+				};
+			};
+			buildConfigurationList = 69B32CA92B86F49400600772 /* Build configuration list for PBXProject "Smart Academics, Wellness, and Rest Planner" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 69B32CA52B86F49400600772;
+			productRefGroup = 69B32CAF2B86F49400600772 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69B32CAD2B86F49400600772 /* Smart Academics, Wellness, and Rest Planner */,
+				69B32CC42B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerTests */,
+				69B32CCE2B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69B32CAC2B86F49400600772 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69B32CB92B86F49500600772 /* Preview Assets.xcassets in Resources */,
+				69B32CB62B86F49500600772 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B32CC32B86F49500600772 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B32CCD2B86F49500600772 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69B32CAA2B86F49400600772 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				691407342B895492003210C8 /* RestViewModel.swift in Sources */,
+				691407422B896F8A003210C8 /*  RecommendationEngine.swift in Sources */,
+				691407322B89547B003210C8 /*  FitnessViewModel.swift in Sources */,
+				6914072C2B895338003210C8 /* AcademicItem.swift in Sources */,
+				69B32CBE2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_Planner.xcdatamodeld in Sources */,
+				6914072E2B895451003210C8 /* FitnessData.swift in Sources */,
+				691407302B895465003210C8 /* RestData.swift in Sources */,
+				6914073C2B896E57003210C8 /* CanvasAPIManager.swift in Sources */,
+				69B4A27B2B89A216002F1404 /* Assignment.swift in Sources */,
+				691407402B896F11003210C8 /*  LocationManager.swift in Sources */,
+				69B4A27D2B89A8B3002F1404 /* ScheduleViewModel.swift in Sources */,
+				69B32CBB2B86F49500600772 /* Persistence.swift in Sources */,
+				691407442B897139003210C8 /* SleepData.swift in Sources */,
+				6914073A2B89550D003210C8 /* SettingsView.swift in Sources */,
+				69B32CB42B86F49400600772 /* ContentView.swift in Sources */,
+				691407382B8954F5003210C8 /* RestView.swift in Sources */,
+				691407282B87E69F003210C8 /* AcademicScheduleViewModel.swift in Sources */,
+				6914072A2B895304003210C8 /* AcademicScheduleView.swift in Sources */,
+				6914073E2B896EC4003210C8 /* HealthDataManager.swift in Sources */,
+				69B32CB22B86F49400600772 /* Smart_Academics__Wellness__and_Rest_PlannerApp.swift in Sources */,
+				691407362B8954B3003210C8 /* FitnessView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B32CC12B86F49500600772 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69B32CCA2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B32CCB2B86F49500600772 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69B32CD42B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerUITests.swift in Sources */,
+				69B32CD62B86F49500600772 /* Smart_Academics__Wellness__and_Rest_PlannerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69B32CC72B86F49500600772 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69B32CAD2B86F49400600772 /* Smart Academics, Wellness, and Rest Planner */;
+			targetProxy = 69B32CC62B86F49500600772 /* PBXContainerItemProxy */;
+		};
+		69B32CD12B86F49500600772 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69B32CAD2B86F49400600772 /* Smart Academics, Wellness, and Rest Planner */;
+			targetProxy = 69B32CD02B86F49500600772 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		69B32CD72B86F49500600772 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		69B32CD82B86F49500600772 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		69B32CDA2B86F49500600772 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Smart Academics, Wellness, and Rest Planner/Smart_Academics__Wellness__and_Rest_Planner.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Smart Academics, Wellness, and Rest Planner/Preview Content\"";
+				DEVELOPMENT_TEAM = H3F664Y434;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Smart Academics, Wellness, and Rest Planner/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wildstech.smartplanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		69B32CDB2B86F49500600772 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Smart Academics, Wellness, and Rest Planner/Smart_Academics__Wellness__and_Rest_Planner.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Smart Academics, Wellness, and Rest Planner/Preview Content\"";
+				DEVELOPMENT_TEAM = H3F664Y434;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Smart Academics, Wellness, and Rest Planner/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wildstech.smartplanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		69B32CDD2B86F49500600772 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wildsltech.smartplanner.Smart-Academics--Wellness--and-Rest-PlannerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Academics, Wellness, and Rest Planner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Smart Academics, Wellness, and Rest Planner";
+			};
+			name = Debug;
+		};
+		69B32CDE2B86F49500600772 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wildsltech.smartplanner.Smart-Academics--Wellness--and-Rest-PlannerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Academics, Wellness, and Rest Planner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Smart Academics, Wellness, and Rest Planner";
+			};
+			name = Release;
+		};
+		69B32CE02B86F49500600772 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wildsltech.smartplanner.Smart-Academics--Wellness--and-Rest-PlannerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Smart Academics, Wellness, and Rest Planner";
+			};
+			name = Debug;
+		};
+		69B32CE12B86F49500600772 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wildsltech.smartplanner.Smart-Academics--Wellness--and-Rest-PlannerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Smart Academics, Wellness, and Rest Planner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69B32CA92B86F49400600772 /* Build configuration list for PBXProject "Smart Academics, Wellness, and Rest Planner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69B32CD72B86F49500600772 /* Debug */,
+				69B32CD82B86F49500600772 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69B32CD92B86F49500600772 /* Build configuration list for PBXNativeTarget "Smart Academics, Wellness, and Rest Planner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69B32CDA2B86F49500600772 /* Debug */,
+				69B32CDB2B86F49500600772 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69B32CDC2B86F49500600772 /* Build configuration list for PBXNativeTarget "Smart Academics, Wellness, and Rest PlannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69B32CDD2B86F49500600772 /* Debug */,
+				69B32CDE2B86F49500600772 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69B32CDF2B86F49500600772 /* Build configuration list for PBXNativeTarget "Smart Academics, Wellness, and Rest PlannerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69B32CE02B86F49500600772 /* Debug */,
+				69B32CE12B86F49500600772 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		69B32CBC2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_Planner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				69B32CBD2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_Planner.xcdatamodel */,
+			);
+			currentVersion = 69B32CBD2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_Planner.xcdatamodel */;
+			path = Smart_Academics__Wellness__and_Rest_Planner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 69B32CA62B86F49400600772 /* Project object */;
+}
