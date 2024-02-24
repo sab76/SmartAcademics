@@ -2,7 +2,6 @@
 //  FitnessData.swift
 //  Smart Academics, Wellness, and Rest Planner
 
-
 import Foundation
 
 struct FitnessData: Identifiable {
@@ -10,5 +9,11 @@ struct FitnessData: Identifiable {
     var date: Date
     var steps: Int
     var workoutMinutes: Int
+    // New properties
+    var sleepHours: Int
+    var sleepQuality: String
+    var activityRecommendation: String?
+    var studyLocationRecommendation: String?
 }
+
 

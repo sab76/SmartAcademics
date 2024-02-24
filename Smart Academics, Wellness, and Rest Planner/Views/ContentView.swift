@@ -7,28 +7,31 @@ import SwiftUI
 import CoreData
 import EventKit
 
-// Main Tab Controller
-struct  ContentView: View {
+struct ContentView: View {
+    // Use MockDataFetcher for mock data, switch to APIDataFetcher for API data later
+    let viewModel = AcademicScheduleViewModel(dataFetcher: MockDataFetcher())
+
     var body: some View {
         TabView {
-            AcademicScheduleView()
+            // Use CoursesView for academic schedule
+            CoursesView(viewModel: viewModel)
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("Schedule")
                 }
-
+            
             FitnessView()
                 .tabItem {
                     Image(systemName: "figure.walk")
                     Text("Fitness")
                 }
-
+            
             RestView()
                 .tabItem {
                     Image(systemName: "bed.double")
                     Text("Rest")
                 }
-
+            
             SettingsView()
                 .tabItem {
                     Image(systemName: "gear")
@@ -39,12 +42,13 @@ struct  ContentView: View {
 }
 
 
-    
-    struct SmartPlannerApp: App {
-        var body: some Scene {
-            WindowGroup {
-                ContentView()
-            }
+struct SmartPlannerApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
         }
     }
+}
+
+
 

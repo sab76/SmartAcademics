@@ -8,14 +8,21 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Form {
-            // Add settings options here
-            Section(header: Text("General")) {
-                Text("Account")
-                Text("Notifications")
+        NavigationView {
+            Form {
+                Section(header: Text("General")) {
+                    NavigationLink("Account", destination: AccountSettingsView())
+                    NavigationLink("Notifications", destination: NotificationSettingsView())
+                }
+                // Example of adding more settings sections
+                Section(header: Text("Preferences")) {
+                    NavigationLink("App Theme", destination: ThemeSettingsView())
+                    NavigationLink("Data Privacy", destination: PrivacySettingsView())
+                }
             }
+            .navigationTitle("Settings")
         }
-        .navigationTitle("Settings")
     }
 }
+
 

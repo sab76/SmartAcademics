@@ -10,11 +10,17 @@ struct RestView: View {
     @ObservedObject var viewModel = RestViewModel()
 
     var body: some View {
-        List(viewModel.data) { data in
-            VStack(alignment: .leading) {
-                Text("Date: \(data.date, formatter: itemFormatter)")
-                Text("Hours Slept: \(data.hoursSlept, specifier: "%.2f")")
-                    .padding(.top, 2)
+        List {
+            ForEach(viewModel.data) { data in
+                VStack(alignment: .leading) {
+                    Text("Date: \(data.date, formatter: itemFormatter)")
+                    Text("Hours Slept: \(data.hoursSlept, specifier: "%.2f") hours")
+                        .padding(.top, 2)
+                }
+                .padding()
+                .background(Color.blue.opacity(0.1))
+                .cornerRadius(8)
+                .padding(.vertical, 4)
             }
         }
         .onAppear(perform: viewModel.fetchRestData)
@@ -27,4 +33,5 @@ private let itemFormatter: DateFormatter = {
     formatter.timeStyle = .none
     return formatter
 }()
+
 

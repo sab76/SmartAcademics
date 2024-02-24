@@ -1,31 +1,18 @@
 //
-//  CourseView.swift
+//  CourseAssignmentsView.swift
 //  Smart Academics, Wellness, and Rest Planner
-
-
+//
+//  Created by Haley Marts on 2/24/24.
+//
 
 import SwiftUI
+import Foundation
 
-struct CoursesView: View {
-    @ObservedObject var viewModel: AcademicScheduleViewModel
-
-    var body: some View {
-        NavigationView {
-            List(viewModel.courses) { course in
-                NavigationLink(destination: CourseView(course: course, dataFetcher: viewModel.dataFetcher)) {
-                    Text(course.name)
-                }
-            }
-            .navigationTitle("Courses")
-        }
-    }
-}
-
-
-struct AssignmentsView: View {
+struct CourseAssignmentsView: View {
     let course: Course
-    @State private var assignments: [Assignment] = []
     var dataFetcher: AcademicDataFetching
+
+    @State private var assignments: [Assignment] = []
 
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -41,6 +28,7 @@ struct AssignmentsView: View {
                 if let dueDate = assignment.dueAt {
                     Text("Due: \(dueDate, formatter: dateFormatter)").font(.subheadline)
                 }
+                // Include additional assignment details here
             }
         }
         .navigationTitle(course.name)
