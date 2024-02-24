@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		691407282B87E69F003210C8 /* AcademicScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407272B87E69F003210C8 /* AcademicScheduleViewModel.swift */; };
-		6914072A2B895304003210C8 /* AcademicScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407292B895303003210C8 /* AcademicScheduleView.swift */; };
 		6914072C2B895338003210C8 /* AcademicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914072B2B895338003210C8 /* AcademicItem.swift */; };
 		6914072E2B895451003210C8 /* FitnessData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914072D2B895451003210C8 /* FitnessData.swift */; };
 		691407302B895465003210C8 /* RestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914072F2B895465003210C8 /* RestData.swift */; };
@@ -34,7 +33,10 @@
 		69B32CE42B86F65A00600772 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B32CE32B86F65A00600772 /* HealthKit.framework */; };
 		69B32CE62B86F66500600772 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B32CE52B86F66500600772 /* CoreLocation.framework */; };
 		69B4A27B2B89A216002F1404 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B4A27A2B89A216002F1404 /* Assignment.swift */; };
-		69B4A27D2B89A8B3002F1404 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B4A27C2B89A8B3002F1404 /* ScheduleViewModel.swift */; };
+		69B4A27F2B89E01A002F1404 /* AcademicScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B4A27E2B89E01A002F1404 /* AcademicScheduleView.swift */; };
+		69B4A2812B89E04F002F1404 /* AssignmentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B4A2802B89E04F002F1404 /* AssignmentDetailView.swift */; };
+		69B4A2832B89E7E9002F1404 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B4A2822B89E7E9002F1404 /* Course.swift */; };
+		69B4A2852B89E813002F1404 /* CourseView.Swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B4A2842B89E813002F1404 /* CourseView.Swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +58,6 @@
 
 /* Begin PBXFileReference section */
 		691407272B87E69F003210C8 /* AcademicScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicScheduleViewModel.swift; sourceTree = "<group>"; };
-		691407292B895303003210C8 /* AcademicScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicScheduleView.swift; sourceTree = "<group>"; };
 		6914072B2B895338003210C8 /* AcademicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicItem.swift; sourceTree = "<group>"; };
 		6914072D2B895451003210C8 /* FitnessData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessData.swift; sourceTree = "<group>"; };
 		6914072F2B895465003210C8 /* RestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestData.swift; sourceTree = "<group>"; };
@@ -87,7 +88,10 @@
 		69B32CE32B86F65A00600772 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		69B32CE52B86F66500600772 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		69B4A27A2B89A216002F1404 /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
-		69B4A27C2B89A8B3002F1404 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		69B4A27E2B89E01A002F1404 /* AcademicScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicScheduleView.swift; sourceTree = "<group>"; };
+		69B4A2802B89E04F002F1404 /* AssignmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentDetailView.swift; sourceTree = "<group>"; };
+		69B4A2822B89E7E9002F1404 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		69B4A2842B89E813002F1404 /* CourseView.Swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.Swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +135,13 @@
 		691407462B897305003210C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				691407292B895303003210C8 /* AcademicScheduleView.swift */,
 				69B32CB32B86F49400600772 /* ContentView.swift */,
 				691407372B8954F5003210C8 /* RestView.swift */,
 				691407392B89550D003210C8 /* SettingsView.swift */,
 				691407352B8954B3003210C8 /* FitnessView.swift */,
+				69B4A27E2B89E01A002F1404 /* AcademicScheduleView.swift */,
+				69B4A2802B89E04F002F1404 /* AssignmentDetailView.swift */,
+				69B4A2842B89E813002F1404 /* CourseView.Swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -146,6 +152,7 @@
 				691407312B89547B003210C8 /*  FitnessViewModel.swift */,
 				691407332B895492003210C8 /* RestViewModel.swift */,
 				691407272B87E69F003210C8 /* AcademicScheduleViewModel.swift */,
+				69B4A2822B89E7E9002F1404 /* Course.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -165,7 +172,6 @@
 		69B32CA52B86F49400600772 = {
 			isa = PBXGroup;
 			children = (
-				69B4A27C2B89A8B3002F1404 /* ScheduleViewModel.swift */,
 				69B32CB02B86F49400600772 /* Smart Academics, Wellness, and Rest Planner */,
 				69B32CC82B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerTests */,
 				69B32CD22B86F49500600772 /* Smart Academics, Wellness, and Rest PlannerUITests */,
@@ -368,22 +374,24 @@
 			files = (
 				691407342B895492003210C8 /* RestViewModel.swift in Sources */,
 				691407422B896F8A003210C8 /*  RecommendationEngine.swift in Sources */,
+				69B4A2812B89E04F002F1404 /* AssignmentDetailView.swift in Sources */,
 				691407322B89547B003210C8 /*  FitnessViewModel.swift in Sources */,
 				6914072C2B895338003210C8 /* AcademicItem.swift in Sources */,
+				69B4A27F2B89E01A002F1404 /* AcademicScheduleView.swift in Sources */,
+				69B4A2852B89E813002F1404 /* CourseView.Swift in Sources */,
 				69B32CBE2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_Planner.xcdatamodeld in Sources */,
 				6914072E2B895451003210C8 /* FitnessData.swift in Sources */,
 				691407302B895465003210C8 /* RestData.swift in Sources */,
 				6914073C2B896E57003210C8 /* CanvasAPIManager.swift in Sources */,
 				69B4A27B2B89A216002F1404 /* Assignment.swift in Sources */,
 				691407402B896F11003210C8 /*  LocationManager.swift in Sources */,
-				69B4A27D2B89A8B3002F1404 /* ScheduleViewModel.swift in Sources */,
+				69B4A2832B89E7E9002F1404 /* Course.swift in Sources */,
 				69B32CBB2B86F49500600772 /* Persistence.swift in Sources */,
 				691407442B897139003210C8 /* SleepData.swift in Sources */,
 				6914073A2B89550D003210C8 /* SettingsView.swift in Sources */,
 				69B32CB42B86F49400600772 /* ContentView.swift in Sources */,
 				691407382B8954F5003210C8 /* RestView.swift in Sources */,
 				691407282B87E69F003210C8 /* AcademicScheduleViewModel.swift in Sources */,
-				6914072A2B895304003210C8 /* AcademicScheduleView.swift in Sources */,
 				6914073E2B896EC4003210C8 /* HealthDataManager.swift in Sources */,
 				69B32CB22B86F49400600772 /* Smart_Academics__Wellness__and_Rest_PlannerApp.swift in Sources */,
 				691407362B8954B3003210C8 /* FitnessView.swift in Sources */,

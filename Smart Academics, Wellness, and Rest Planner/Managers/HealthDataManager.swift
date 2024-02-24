@@ -1,9 +1,8 @@
 //
 //  HealthDataManager.swift
 //  Smart Academics, Wellness, and Rest Planner
-//
-//  Created by Haley Marts on 2/23/24.
-// Make sure we have the necessary permissions to set up in our app's Info.plist and request authorization from the user. 
+
+ 
 
 import HealthKit
 import Foundation
@@ -28,14 +27,14 @@ class HealthDataManager {
         }
     }
 
-    // Example function to fetch step count
+    // Using xxample function to fetch step count
     func fetchStepCount(completion: @escaping (Int) -> Void) {
         // Implementation goes here
     }
 
     // Example function to fetch sleep analysis
     func fetchSleepAnalysis(completion: @escaping ([SleepData]) -> Void) {
-        // Implementation goes here
+        // Implementation will go here
     }
 }
 

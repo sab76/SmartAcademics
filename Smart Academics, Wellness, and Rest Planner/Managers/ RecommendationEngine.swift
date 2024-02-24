@@ -1,14 +1,14 @@
 //
 //   RecommendationEngine.swift
 //  Smart Academics, Wellness, and Rest Planner
-//
-//  Created by Haley Marts on 2/23/24.
-//Implement a simple recommendation engine that considers the user's academic deadlines, fitness activity, and rest patterns to suggest an optimized daily schedule. This could start as a rule-based system and evolve into a more complex algorithmic solution using machine learning techniques for personalized recommendations
+
+//I have implement a simple recommendation engine that considers the user's academic deadlines, fitness activity, and rest patterns to suggest an optimized daily schedule.
+
 import Foundation
 class RecommendationEngine {
     func generateDailyRecommendations(academicItems: [AcademicItem], fitnessData: [FitnessData], restData: [RestData]) -> [DailyRecommendation] {
-        // This is a placeholder implementation
-        // You should replace it with actual logic based on academicItems, fitnessData, and restData
+        //placeholder implementation
+        // will replace it with actual logic based on academicItems, fitnessData, and restData
         
         // Example recommendation logic
         let studyRecommendation = DailyRecommendation(recommendation: "Dedicate 2 hours to studying Calculus tonight.")

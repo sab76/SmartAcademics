@@ -1,8 +1,6 @@
 //
 //   LocationManager.swift
 //  Smart Academics, Wellness, and Rest Planner
-//
-//  Created by Haley Marts on 2/23/24.
 //To incorporate location data, use the CoreLocation framework. Ensure you request the appropriate permissions from the user in your Info.plist and at runtime
 
 import CoreLocation
@@ -15,7 +13,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     override init() {
         super.init()
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization() // or requestAlwaysAuthorization() based on your need
+        locationManager.requestWhenInUseAuthorization() 
     }
 
     func startUpdatingLocation() {
