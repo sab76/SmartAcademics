@@ -12,8 +12,16 @@ struct CoursesView: View {
     var body: some View {
         NavigationView {
             List(viewModel.courses) { course in
-                NavigationLink(destination: CourseAssignmentsView(course: course, dataFetcher: viewModel.dataFetcher)) {
-                    Text(course.name)
+                NavigationLink(destination: CourseAssignmentsView(course: course, dataFetcher: viewModel.dataFetcher, viewModel: viewModel)) {
+                    HStack {
+                        Text(course.name)
+                        Spacer()
+                        Text(course.priority.rawValue)
+                            .foregroundColor(.gray)
+                            .padding(.all, 5)
+                            .background(Color.blue.opacity(0.2))
+                            .cornerRadius(5)
+                        }
                 }
             }
             .navigationTitle("Courses")

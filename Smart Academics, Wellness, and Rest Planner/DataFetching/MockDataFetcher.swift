@@ -124,10 +124,10 @@ class MockDataFetcher: AcademicDataFetching {
     func fetchCourses(completion: @escaping ([Course]) -> Void) {
         // Now accessible here
         let courses = [
-            Course(id: 125, name: "CompSci 125: Next Generation Search Systems", assignments: assignmentsFor125),
-            Course(id: 171, name: "CompSci 171: Introduction to Artificial Intelligence", assignments: assignmentsFor171),
-            Course(id: 116, name: "CompSci 116: Computational Photography and Vision", assignments: assignmentsFor116), // Corrected course name
-            Course(id: 161, name: "CompSci 161: Design and Analysis of Algorithms", assignments: assignmentsFor161), // Corrected course name
+            Course(id: 125, name: "CompSci 125: Next Generation Search Systems", assignments: assignmentsFor125, priority: .high),
+            Course(id: 171, name: "CompSci 171: Introduction to Artificial Intelligence", assignments: assignmentsFor171, priority: .high),
+            Course(id: 116, name: "CompSci 116: Computational Photography and Vision", assignments: assignmentsFor116, priority: .high), // Corrected course name
+            Course(id: 161, name: "CompSci 161: Design and Analysis of Algorithms", assignments: assignmentsFor161, priority: .high), // Corrected course name
         ]
 
         completion(courses)

@@ -1,16 +1,12 @@
-//
-//  CourseAssignmentsView.swift
-//  Smart Academics, Wellness, and Rest Planner
-//
-//  Created by Haley Marts on 2/24/24.
-//
-
 import SwiftUI
 import Foundation
 
 struct CourseAssignmentsView: View {
     let course: Course
     var dataFetcher: AcademicDataFetching
+    @ObservedObject var viewModel: AcademicScheduleViewModel
+    @State private var selectedPriority: Course.Priority = .low
+
 
     @State private var assignments: [Assignment] = []
 
@@ -21,19 +17,37 @@ struct CourseAssignmentsView: View {
         return formatter
     }()
 
+    init(course: Course, dataFetcher: AcademicDataFetching, viewModel: AcademicScheduleViewModel) {
+        self.course = course
+        self.dataFetcher = dataFetcher
+        self.viewModel = viewModel
+    }
+
     var body: some View {
-        List(assignments) { assignment in
-            VStack(alignment: .leading) {
-                Text(assignment.name).font(.headline)
-                if let dueDate = assignment.dueAt {
-                    Text("Due: \(dueDate, formatter: dateFormatter)").font(.subheadline)
+        VStack {
+            List(assignments) { assignment in
+                VStack(alignment: .leading) {
+                    Text(assignment.name).font(.headline)
+                    if let dueDate = assignment.dueAt {
+                        Text("Due: \(dueDate, formatter: dateFormatter)").font(.subheadline)
+                    }
                 }
-                // Include additional assignment details here
             }
+
+            Picker("Priority", selection: $selectedPriority) {
+                ForEach(Course.Priority.allCases, id: \.self) { priority in
+                    Text(priority.rawValue).tag(priority)
+                }
+            }
+            .onChange(of: selectedPriority) {
+                viewModel.updatePriority(forCourseId: course.id, to: selectedPriority)
+            }
+
         }
         .navigationTitle(course.name)
         .onAppear {
             fetchAssignments(forCourseId: course.id)
+            selectedPriority = course.priority // Initialize selectedPriority here.
         }
     }
 
@@ -45,4 +59,3 @@ struct CourseAssignmentsView: View {
         }
     }
 }
-

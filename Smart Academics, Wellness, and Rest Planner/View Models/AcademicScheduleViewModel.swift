@@ -32,6 +32,15 @@ class AcademicScheduleViewModel: ObservableObject {
         }
     }
 }
+//adding functionality to update priorities changes.
+extension AcademicScheduleViewModel {
+    func updatePriority(forCourseId id: Int, to newPriority: Course.Priority) {
+        if let index = courses.firstIndex(where: { $0.id == id }) {
+            courses[index].priority = newPriority
+            // we might also want to save the updated course list to your data store or backend.
+        }
+    }
+}
 
 
 

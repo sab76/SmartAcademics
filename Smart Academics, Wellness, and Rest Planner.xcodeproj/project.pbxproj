@@ -22,8 +22,12 @@
 		691407422B896F8A003210C8 /*  RecommendationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407412B896F8A003210C8 /*  RecommendationEngine.swift */; };
 		691407442B897139003210C8 /* SleepData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407432B897139003210C8 /* SleepData.swift */; };
 		693E34662B8A114000420B3C /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E34652B8A114000420B3C /* CourseView.swift */; };
+		6991945D2B8AFC2000876976 /* FitnessGoalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6991945C2B8AFC2000876976 /* FitnessGoalSettings.swift */; };
+		699194602B8AFCC700876976 /* FitnessGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6991945F2B8AFCC700876976 /* FitnessGoal.swift */; };
+		699194622B8AFD0C00876976 /* FitnessGoalSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699194612B8AFD0C00876976 /* FitnessGoalSetting.swift */; };
+		699194642B8EA96200876976 /* CanvasIntegrationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699194632B8EA96200876976 /* CanvasIntegrationSettingsView.swift */; };
+		699194662B8EEB8C00876976 /* RestPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699194652B8EEB8C00876976 /* RestPreferencesView.swift */; };
 		69A754AC2B8A18430094BB05 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A754AB2B8A18430094BB05 /* NotificationSettingsView.swift */; };
-		69A754AE2B8A18540094BB05 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A754AD2B8A18540094BB05 /* ThemeSettingsView.swift */; };
 		69A754B02B8A18630094BB05 /* PrivacySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A754AF2B8A18630094BB05 /* PrivacySettingsView.swift */; };
 		69A754B22B8A191C0094BB05 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A754B12B8A191C0094BB05 /* AccountSettingsView.swift */; };
 		69A754B52B8A1D0F0094BB05 /* MockDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A754B42B8A1D0F0094BB05 /* MockDataFetcher.swift */; };
@@ -80,8 +84,12 @@
 		691407412B896F8A003210C8 /*  RecommendationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " RecommendationEngine.swift"; sourceTree = "<group>"; };
 		691407432B897139003210C8 /* SleepData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepData.swift; sourceTree = "<group>"; };
 		693E34652B8A114000420B3C /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		6991945C2B8AFC2000876976 /* FitnessGoalSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessGoalSettings.swift; sourceTree = "<group>"; };
+		6991945F2B8AFCC700876976 /* FitnessGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessGoal.swift; sourceTree = "<group>"; };
+		699194612B8AFD0C00876976 /* FitnessGoalSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessGoalSetting.swift; sourceTree = "<group>"; };
+		699194632B8EA96200876976 /* CanvasIntegrationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasIntegrationSettingsView.swift; sourceTree = "<group>"; };
+		699194652B8EEB8C00876976 /* RestPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestPreferencesView.swift; sourceTree = "<group>"; };
 		69A754AB2B8A18430094BB05 /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
-		69A754AD2B8A18540094BB05 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
 		69A754AF2B8A18630094BB05 /* PrivacySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettingsView.swift; sourceTree = "<group>"; };
 		69A754B12B8A191C0094BB05 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		69A754B42B8A1D0F0094BB05 /* MockDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataFetcher.swift; sourceTree = "<group>"; };
@@ -153,7 +161,6 @@
 			children = (
 				69B32CB32B86F49400600772 /* ContentView.swift */,
 				69A754AB2B8A18430094BB05 /* NotificationSettingsView.swift */,
-				69A754AD2B8A18540094BB05 /* ThemeSettingsView.swift */,
 				69A754AF2B8A18630094BB05 /* PrivacySettingsView.swift */,
 				691407372B8954F5003210C8 /* RestView.swift */,
 				691407392B89550D003210C8 /* SettingsView.swift */,
@@ -163,6 +170,9 @@
 				69B4A2802B89E04F002F1404 /* AssignmentDetailView.swift */,
 				693E34652B8A114000420B3C /* CourseView.swift */,
 				69A754BA2B8A30130094BB05 /* CourseAssignmentsView.swift */,
+				6991945C2B8AFC2000876976 /* FitnessGoalSettings.swift */,
+				699194632B8EA96200876976 /* CanvasIntegrationSettingsView.swift */,
+				699194652B8EEB8C00876976 /* RestPreferencesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +184,7 @@
 				691407332B895492003210C8 /* RestViewModel.swift */,
 				691407272B87E69F003210C8 /* AcademicScheduleViewModel.swift */,
 				69B4A2822B89E7E9002F1404 /* Course.swift */,
+				699194612B8AFD0C00876976 /* FitnessGoalSetting.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -186,8 +197,17 @@
 				691407412B896F8A003210C8 /*  RecommendationEngine.swift */,
 				6914073B2B896E57003210C8 /* CanvasAPIManager.swift */,
 				69B4A27A2B89A216002F1404 /* Assignment.swift */,
+				6991945E2B8AFCAD00876976 /* Goals */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		6991945E2B8AFCAD00876976 /* Goals */ = {
+			isa = PBXGroup;
+			children = (
+				6991945F2B8AFCC700876976 /* FitnessGoal.swift */,
+			);
+			path = Goals;
 			sourceTree = "<group>";
 		};
 		69A754B32B8A1CE50094BB05 /* DataFetching */ = {
@@ -408,18 +428,22 @@
 				69A754B52B8A1D0F0094BB05 /* MockDataFetcher.swift in Sources */,
 				693E34662B8A114000420B3C /* CourseView.swift in Sources */,
 				691407422B896F8A003210C8 /*  RecommendationEngine.swift in Sources */,
+				6991945D2B8AFC2000876976 /* FitnessGoalSettings.swift in Sources */,
 				69B4A2812B89E04F002F1404 /* AssignmentDetailView.swift in Sources */,
 				69A754B22B8A191C0094BB05 /* AccountSettingsView.swift in Sources */,
 				691407322B89547B003210C8 /*  FitnessViewModel.swift in Sources */,
 				6914072C2B895338003210C8 /* AcademicItem.swift in Sources */,
 				69B4A27F2B89E01A002F1404 /* AcademicScheduleView.swift in Sources */,
 				69B32CBE2B86F49500600772 /* Smart_Academics__Wellness__and_Rest_Planner.xcdatamodeld in Sources */,
+				699194662B8EEB8C00876976 /* RestPreferencesView.swift in Sources */,
 				6914072E2B895451003210C8 /* FitnessData.swift in Sources */,
 				691407302B895465003210C8 /* RestData.swift in Sources */,
 				6914073C2B896E57003210C8 /* CanvasAPIManager.swift in Sources */,
+				699194602B8AFCC700876976 /* FitnessGoal.swift in Sources */,
 				69A754B72B8A1D250094BB05 /* AcademicDataFetching.swift in Sources */,
 				69B4A27B2B89A216002F1404 /* Assignment.swift in Sources */,
 				69A754B02B8A18630094BB05 /* PrivacySettingsView.swift in Sources */,
+				699194642B8EA96200876976 /* CanvasIntegrationSettingsView.swift in Sources */,
 				69A754AC2B8A18430094BB05 /* NotificationSettingsView.swift in Sources */,
 				691407402B896F11003210C8 /*  LocationManager.swift in Sources */,
 				69B4A2832B89E7E9002F1404 /* Course.swift in Sources */,
@@ -427,7 +451,7 @@
 				69B32CBB2B86F49500600772 /* Persistence.swift in Sources */,
 				691407442B897139003210C8 /* SleepData.swift in Sources */,
 				6914073A2B89550D003210C8 /* SettingsView.swift in Sources */,
-				69A754AE2B8A18540094BB05 /* ThemeSettingsView.swift in Sources */,
+				699194622B8AFD0C00876976 /* FitnessGoalSetting.swift in Sources */,
 				69B32CB42B86F49400600772 /* ContentView.swift in Sources */,
 				691407382B8954F5003210C8 /* RestView.swift in Sources */,
 				691407282B87E69F003210C8 /* AcademicScheduleViewModel.swift in Sources */,

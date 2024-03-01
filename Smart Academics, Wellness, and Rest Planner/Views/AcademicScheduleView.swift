@@ -14,7 +14,7 @@ struct AcademicScheduleView: View {
     var body: some View {
         NavigationView {
             List(viewModel.courses) { course in
-                NavigationLink(destination: CourseAssignmentsView(course: course, dataFetcher: viewModel.dataFetcher)) {
+                NavigationLink(destination: CourseAssignmentsView(course: course, dataFetcher: viewModel.dataFetcher, viewModel: viewModel)) {
                     Text(course.name)
                 }
             }
@@ -36,6 +36,7 @@ struct AcademicScheduleView: View {
         }
     }
 }
+
 
 
  //   func scheduleStudySession(for assignment: Assignment) {

@@ -8,6 +8,7 @@ import CoreData
 import EventKit
 
 struct ContentView: View {
+    @StateObject var restViewModel = RestViewModel()
     // Use MockDataFetcher for mock data, switch to APIDataFetcher for API data later
     let viewModel = AcademicScheduleViewModel(dataFetcher: MockDataFetcher())
 
@@ -31,11 +32,12 @@ struct ContentView: View {
                     Image(systemName: "bed.double")
                     Text("Rest")
                 }
+    
             
-            SettingsView()
-                .tabItem {
-                    Image(systemName: "gear")
-                    Text("Settings")
+            SettingsView(restViewModel: restViewModel)  // Pass the RestViewModel to SettingsView
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Settings")
                 }
         }
     }

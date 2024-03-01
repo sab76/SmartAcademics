@@ -12,3 +12,8 @@ struct RestData: Identifiable {
     var hoursSlept: Double
 }
 
+struct RestPreferences {
+    var sleepGoalHours: Double
+    var quietHoursStart: Date
+    var quietHoursEnd: Date
+}
