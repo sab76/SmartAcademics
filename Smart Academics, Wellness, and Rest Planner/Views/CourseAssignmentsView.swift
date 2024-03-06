@@ -6,14 +6,21 @@ struct CourseAssignmentsView: View {
     var dataFetcher: AcademicDataFetching
     @ObservedObject var viewModel: AcademicScheduleViewModel
     @State private var selectedPriority: Course.Priority = .low
-
-
     @State private var assignments: [Assignment] = []
 
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
+        return formatter
+    }()
+
+    private let isoDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ" // Adjust this format to match your JSON date strings
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         return formatter
     }()
 
@@ -25,11 +32,11 @@ struct CourseAssignmentsView: View {
 
     var body: some View {
         VStack {
-            List(assignments) { assignment in
+            List(assignments, id: \.id) { assignment in // Ensure Assignment conforms to Identifiable
                 VStack(alignment: .leading) {
                     Text(assignment.name).font(.headline)
                     if let dueDate = assignment.dueAt {
-                        Text("Due: \(dueDate, formatter: dateFormatter)").font(.subheadline)
+                        Text("Due: \(dateFormatter.string(from: dueDate))").font(.subheadline) // Fixed string interpolation
                     }
                 }
             }
@@ -40,14 +47,13 @@ struct CourseAssignmentsView: View {
                 }
             }
             .onChange(of: selectedPriority) {
-                viewModel.updatePriority(forCourseId: course.id, to: selectedPriority)
+                viewModel.updatePriority(forCourseId: course.id, to: $0)
             }
-
         }
         .navigationTitle(course.name)
         .onAppear {
             fetchAssignments(forCourseId: course.id)
-            selectedPriority = course.priority // Initialize selectedPriority here.
+            selectedPriority = course.priority
         }
     }
 
@@ -56,6 +62,20 @@ struct CourseAssignmentsView: View {
             DispatchQueue.main.async {
                 self.assignments = fetchedAssignments
             }
+        }
+    }
+
+    private func decodeAssignments(from data: Data) {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(isoDateFormatter)
+
+        do {
+            let decodedAssignments = try decoder.decode([Assignment].self, from: data)
+            DispatchQueue.main.async {
+                self.assignments = decodedAssignments
+            }
+        } catch {
+            print("Failed to decode assignments:", error)
         }
     }
 }

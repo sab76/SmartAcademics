@@ -5,7 +5,7 @@
 //  Created by Haley Marts on 2/24/24.
 import Foundation
 import SwiftUI
-
+/*
 class MockDataFetcher: AcademicDataFetching {
     private let formatter = ISO8601DateFormatter()
 
@@ -148,5 +148,5 @@ class MockDataFetcher: AcademicDataFetching {
         }
     }
 }
-
+*/
 

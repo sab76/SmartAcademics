@@ -10,7 +10,7 @@ import EventKit
 struct ContentView: View {
     @StateObject var restViewModel = RestViewModel()
     // Use MockDataFetcher for mock data, switch to APIDataFetcher for API data later
-    let viewModel = AcademicScheduleViewModel(dataFetcher: MockDataFetcher())
+    let viewModel = AcademicScheduleViewModel(dataFetcher: APIDataFetcher())
 
     var body: some View {
         TabView {
