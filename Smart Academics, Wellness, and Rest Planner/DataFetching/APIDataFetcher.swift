@@ -61,6 +61,11 @@ class APIDataFetcher: AcademicDataFetching {
                 return
             }
             
+            // Attempt to print received JSON for debugging purposes
+            if let jsonStr = String(data: data, encoding: .utf8) {
+                print("Received JSON: \(jsonStr)")
+            }
+            
             do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601

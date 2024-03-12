@@ -11,7 +11,7 @@ struct CoursesView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.courses) { course in
+            List(viewModel.courses.filter { $0.enrollmentTermID == 346 }) { course in
                 NavigationLink(destination: CourseAssignmentsView(course: course, dataFetcher: viewModel.dataFetcher, viewModel: viewModel)) {
                     HStack {
                         Text(course.name)

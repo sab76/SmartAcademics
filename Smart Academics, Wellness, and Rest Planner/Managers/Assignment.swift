@@ -48,6 +48,7 @@ struct LockInfo: Codable {
     var lockAt: Date?
     var contextModule: String?
     var manuallyLocked: Bool?
+    var canView: Bool?
 
     enum CodingKeys: String, CodingKey {
         case assetString = "asset_string"
@@ -55,11 +56,12 @@ struct LockInfo: Codable {
         case lockAt = "lock_at"
         case contextModule = "context_module"
         case manuallyLocked = "manually_locked"
+        case canView = "can_view"
     }
 }
 
 struct RubricRating: Codable {
-    var points: Int
+    var points: Double
     var id: String
     var description: String
     var longDescription: String?
@@ -159,7 +161,7 @@ struct ScoreStatistic: Codable {
 struct RubricSettings: Codable {
     var id: Int
     var title: String
-    var pointsPossible: Int
+    var pointsPossible: Double
     var freeFormCriterionComments: Bool
     var hideScoreTotal: Bool
     var hidePoints: Bool
@@ -177,7 +179,7 @@ struct RubricSettings: Codable {
 struct Assignment: Identifiable, Codable {
     var id: Int //
     var name: String //
-    var description: String //
+    var description: String? //
     var createdAt: Date //
     var updatedAt: Date //
     var dueAt: Date? //
@@ -213,7 +215,7 @@ struct Assignment: Identifiable, Codable {
     var submissionTypes: [String] //
     var hasSubmittedSubmissions: Bool //
     var gradingType: String //
-    var gradingStandardId: Int? //
+    var gradingStandardId: String? //
     var published: Bool //
     var unpublishable: Bool?
     var onlyVisibleToOverrides: Bool //
@@ -266,6 +268,7 @@ struct Assignment: Identifiable, Codable {
     var workflowState: String //
     var secureParams: String? //
     var restrictQuantitativeData: Bool? //
+    var freeFormCriterionComments: Bool?
 
     enum CodingKeys: String, CodingKey {
         case id, name, description
@@ -357,6 +360,7 @@ struct Assignment: Identifiable, Codable {
         case secureParams = "secure_params"
         case ltiContextID = "lti_context_id"
         case restrictQuantitativeData = "restict_quantitative_data"
+        case freeFormCriterionComments = "free_form_criterion_comments"
     }
 }
 
