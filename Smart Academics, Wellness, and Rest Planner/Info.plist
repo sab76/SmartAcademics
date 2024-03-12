@@ -2,7 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIBackgroundModes</key>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Our app uses step count, workout, sleep analysis, and heart rate data to provide you with health and fitness insights.</string>
+	<key>UIRequiredDeviceCapabilities</key>
 	<array/>
 </dict>
 </plist>

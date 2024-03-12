@@ -2,12 +2,11 @@
 //  RestView.swift
 //  Smart Academics, Wellness, and Rest Planner
 
-
 import Foundation
 import SwiftUI
 
 struct RestView: View {
-    @ObservedObject var viewModel = RestViewModel()
+    @ObservedObject var viewModel: RestViewModel  // Changed to accept viewModel from outside
 
     var body: some View {
         List {
@@ -33,5 +32,3 @@ private let itemFormatter: DateFormatter = {
     formatter.timeStyle = .none
     return formatter
 }()
-
-

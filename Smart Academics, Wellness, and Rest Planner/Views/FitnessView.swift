@@ -1,19 +1,20 @@
-//
-//  FitnessView.swift
-//  Smart Academics, Wellness, and Rest Planner
-
 import Foundation
 import SwiftUI
 
+extension Date {
+    func isSameDay(as otherDate: Date) -> Bool {
+        let calendar = Calendar.current
+        return calendar.isDate(self, inSameDayAs: otherDate)
+    }
+}
+
 struct FitnessView: View {
-    @ObservedObject var viewModel = FitnessViewModel()
+    @ObservedObject var viewModel: FitnessViewModel  // Adjusted to accept viewModel from outside
     
-    // Current date tab
     @State private var selectedDate: Date? = Date()
     
     var body: some View {
         VStack {
-            // Wellness Insights at the top
             if viewModel.showWellnessInsights {
                 GroupBox(label: Text("Wellness Insights")) {
                     Text(viewModel.wellnessInsights)
@@ -22,9 +23,8 @@ struct FitnessView: View {
                 .padding()
             }
             
-            // Display the current day in a tab
             TabView {
-                ForEach(viewModel.data.filter { $0.date.isSameDay(as: selectedDate) }) { data in
+                ForEach(viewModel.data.filter { $0.date.isSameDay(as: selectedDate ?? Date()) }) { data in
                     dailySummaryView(data: data)
                         .tabItem {
                             Image(systemName: "calendar")
@@ -33,7 +33,6 @@ struct FitnessView: View {
                 }
             }
             
-            // Navigation to view past days
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(viewModel.data, id: \.id) { data in
@@ -72,7 +71,6 @@ struct FitnessView: View {
         .padding()
     }
     
-    // Define a static date formatter
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
@@ -80,10 +78,4 @@ struct FitnessView: View {
     }()
 }
 
-extension Date {
-    func isSameDay(as otherDate: Date?) -> Bool {
-        guard let otherDate = otherDate else { return false }
-        let calendar = Calendar.current
-        return calendar.isDate(self, inSameDayAs: otherDate)
-    }
-}
+// Assume Date extension remains unchanged

@@ -1,5 +1,5 @@
 import Foundation
-
+/*
 class CanvasAPIManager {
     static let shared = CanvasAPIManager()
     private init() {}
@@ -120,5 +120,5 @@ class CanvasAPIManager {
     }
    
 }
-
+*/
 

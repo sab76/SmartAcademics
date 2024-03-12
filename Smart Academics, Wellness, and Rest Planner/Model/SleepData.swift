@@ -4,6 +4,7 @@
 
 
 import Foundation
+import HealthKit
 
 struct SleepData: Identifiable {
     var id: UUID = UUID()  // unique identifier for each sleep data entry
@@ -11,4 +12,3 @@ struct SleepData: Identifiable {
     var hoursSlept: Double  //  number of hours slept
     // will add any other relevant properties we may need for sleep analysis
 }
-

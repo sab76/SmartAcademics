@@ -5,6 +5,7 @@
 
 
 import Foundation
+import HealthKit
 
 struct RestData: Identifiable {
     var id = UUID()
