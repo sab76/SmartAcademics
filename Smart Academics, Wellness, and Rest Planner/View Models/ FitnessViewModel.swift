@@ -26,21 +26,44 @@ class FitnessViewModel: ObservableObject {
     }
     
     func fetchFitnessData() {
-        // Fetch step count from HealthDataManager
-        healthDataManager.fetchStepCount { [weak self] stepCount in
-            DispatchQueue.main.async {
-                // Assuming you need to fetch additional data (e.g., averageHeartRate, workouts)
-                // For demonstration, these are set with dummy data. Replace with actual fetch calls.
-                let averageHeartRate = 0 // Replace with actual fetch call and logic
-                var workouts: [WorkoutData] = [] // Replace with actual fetch call and logic
+        let dispatchGroup = DispatchGroup()
 
-                // Now, create the FitnessData with all required parameters
-                let today = Date()
-                let fitnessData = FitnessData(date: today, steps: stepCount, workoutMinutes: 0, sleepHours: 0, sleepQuality: "", activityRecommendation: nil, studyLocationRecommendation: nil, averageHeartRate: averageHeartRate, workouts: workouts)
+        var stepCount = 0
+        var workoutMinutes = 0
+        var sleepHours = 0.0
+        // Placeholder for sleep quality, as HealthKit does not provide a direct metric.
+        let sleepQuality = "Good"
+
+        dispatchGroup.enter()
+        healthDataManager.fetchStepCount { fetchedSteps in
+            stepCount = fetchedSteps
+            dispatchGroup.leave()
+        }
+
+        dispatchGroup.enter()
+        healthDataManager.fetchWorkoutMinutes { fetchedWorkoutMinutes in
+            workoutMinutes = fetchedWorkoutMinutes
+            dispatchGroup.leave()
+        }
+
+        dispatchGroup.enter()
+        healthDataManager.fetchSleepHours { fetchedSleepHours in
+            sleepHours = fetchedSleepHours
+            dispatchGroup.leave()
+        }
+
+        // When all async tasks are complete, update the UI
+        dispatchGroup.notify(queue: .main) {
+            let today = Date()
+            let fitnessData = FitnessData(date: today, steps: stepCount, workoutMinutes: workoutMinutes, sleepHours: Int(sleepHours), sleepQuality: sleepQuality, activityRecommendation: nil, studyLocationRecommendation: nil, averageHeartRate: 0, workouts: [])
+            // Update your observed data array, this example simply sets it with the new data
+            self.data = [fitnessData]
+            //debugging
+            dispatchGroup.notify(queue: .main) {
+                print("Fetched Data - Steps: \(stepCount), Workout Minutes: \(workoutMinutes), Sleep Hours: \(sleepHours)")
                 
-                // Update your observed data array
-                self?.data = [fitnessData]
             }
+
         }
     }
 

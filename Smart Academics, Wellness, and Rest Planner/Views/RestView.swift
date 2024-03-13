@@ -14,7 +14,9 @@ struct RestView: View {
                 VStack(alignment: .leading) {
                     Text("Date: \(data.date, formatter: itemFormatter)")
                     Text("Hours Slept: \(data.hoursSlept, specifier: "%.2f") hours")
+                    Text("Sleep State: \(data.sleepState == .inBed ? "In Bed" : "Asleep")")
                         .padding(.top, 2)
+                    
                 }
                 .padding()
                 .background(Color.blue.opacity(0.1))

@@ -28,7 +28,51 @@ class HealthDataManager {
             completion(success, error)
         }
     }
-    
+    // In HealthDataManager
+
+    // Fetch Workout Minutes
+    func fetchWorkoutMinutes(completion: @escaping (Int) -> Void) {
+        let workoutType = HKObjectType.workoutType()
+        let now = Date()
+        let startOfDay = Calendar.current.startOfDay(for: now)
+        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
+        
+        let query = HKSampleQuery(sampleType: workoutType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { _, results, _ in
+            let totalMinutes = results?.reduce(0) { (acc, sample) -> Int in
+                let workout = sample as! HKWorkout
+                return acc + Int(workout.duration / 60)
+            } ?? 0
+            DispatchQueue.main.async {
+                completion(totalMinutes)
+            }
+        }
+        
+        self.healthStore.execute(query)
+    }
+
+    // Fetch Sleep Hours
+    func fetchSleepHours(completion: @escaping (Double) -> Void) {
+        guard let sleepType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis) else {
+            return
+        }
+        
+        let now = Date()
+        let startOfDay = Calendar.current.startOfDay(for: now)
+        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
+        
+        let query = HKSampleQuery(sampleType: sleepType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { _, results, _ in
+            let totalHours = results?.reduce(0.0) { (acc, sample) -> Double in
+                let sleepAnalysis = sample as! HKCategorySample
+                return acc + sleepAnalysis.endDate.timeIntervalSince(sleepAnalysis.startDate) / 3600.0
+            } ?? 0.0
+            DispatchQueue.main.async {
+                completion(totalHours)
+            }
+        }
+        
+        self.healthStore.execute(query)
+    }
+
     // Existing methods for fetching step count and sleep analysis...
     func fetchWorkouts(completion: @escaping ([WorkoutData]) -> Void) {
         // Pass nil as the predicate to fetch workouts of all types
