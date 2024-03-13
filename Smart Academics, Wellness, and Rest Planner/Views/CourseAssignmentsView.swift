@@ -59,11 +59,18 @@ struct CourseAssignmentsView: View {
 
     private func fetchAssignments(forCourseId courseId: Int) {
         dataFetcher.fetchAssignments(forCourseId: courseId) { fetchedAssignments in
+            let now = Date() // Current date and time
+            let filteredAssignments = fetchedAssignments.filter { assignment in
+                // Keep the assignment if it has not been submitted yet OR its due date is in the future
+                (assignment.dueAt != nil && assignment.dueAt! > now)
+            }
+            
             DispatchQueue.main.async {
-                self.assignments = fetchedAssignments
+                self.assignments = filteredAssignments
             }
         }
     }
+
 
     private func decodeAssignments(from data: Data) {
         let decoder = JSONDecoder()

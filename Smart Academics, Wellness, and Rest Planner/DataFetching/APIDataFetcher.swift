@@ -60,34 +60,48 @@ class APIDataFetcher: AcademicDataFetching {
                 completion([])
                 return
             }
-            
-            // Attempt to print received JSON for debugging purposes
-            if let jsonStr = String(data: data, encoding: .utf8) {
-                print("Received JSON: \(jsonStr)")
-            }
-            
+
             do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
-                let assignments = try decoder.decode([Assignment].self, from: data)
-                DispatchQueue.main.async {
-                    completion(assignments)
+                var assignments = try decoder.decode([Assignment].self, from: data)
+                
+                // Check if the course ID matches 61020 and fetch the specific assignment
+                if courseId == 61020 {
+                    let specificAssignmentURL = URL(string: "\(self.baseURL)courses/\(courseId)/assignments/1295368?access_token=\(self.accessToken)")!
+                    let specificAssignmentTask = URLSession.shared.dataTask(with: specificAssignmentURL) { specificData, specificResponse, specificError in
+                        guard let specificData = specificData, specificError == nil else {
+                            print("Error fetching the specific assignment: \(specificError?.localizedDescription ?? "Unknown error")")
+                            DispatchQueue.main.async {
+                                completion(assignments) // Complete with the assignments already fetched
+                            }
+                            return
+                        }
+                        
+                        do {
+                            let specificAssignment = try decoder.decode(Assignment.self, from: specificData)
+                            assignments.append(specificAssignment) // Add the specific assignment to the assignments array
+                            DispatchQueue.main.async {
+                                completion(assignments)
+                            }
+                        } catch {
+                            print("Failed to decode the specific assignment: \(error.localizedDescription)")
+                            DispatchQueue.main.async {
+                                completion(assignments) // Complete with the assignments already fetched
+                            }
+                        }
+                    }
+                    specificAssignmentTask.resume()
+                } else {
+                    DispatchQueue.main.async {
+                        completion(assignments) // If not the specific course, complete with the fetched assignments
+                    }
                 }
-            } catch let DecodingError.dataCorrupted(context) {
-                print("Data corrupted: \(context.debugDescription)")
-                completion([])
-            } catch let DecodingError.keyNotFound(key, context) {
-                print("Key '\(key)' not found: \(context.debugDescription), path: \(context.codingPath)")
-                completion([])
-            } catch let DecodingError.valueNotFound(value, context) {
-                print("Value '\(value)' not found: \(context.debugDescription), path: \(context.codingPath)")
-                completion([])
-            } catch let DecodingError.typeMismatch(type, context) {
-                print("Type '\(type)' mismatch: \(context.debugDescription), path: \(context.codingPath)")
-                completion([])
             } catch {
                 print("Failed to decode assignments: \(error.localizedDescription)")
-                completion([])
+                DispatchQueue.main.async {
+                    completion([])
+                }
             }
         }
         

@@ -4,12 +4,13 @@ import EventKit
 
 class AcademicScheduleViewModel: ObservableObject {
     @Published var courses: [Course] = []
-    // @Published var assignments: [Assignment] = [] // Uncomment if you want to store assignments globally in this ViewModel.
+    @Published var assignmentsByCourseId: [Int: [Assignment]] = [:] // Maps course IDs to their assignments
+    
     var dataFetcher: AcademicDataFetching
 
     init(dataFetcher: AcademicDataFetching) {
         self.dataFetcher = dataFetcher
-        fetchCourses()
+        fetchCoursesAndAssignments()
     }
     
     func fetchCourses() {
@@ -20,30 +21,33 @@ class AcademicScheduleViewModel: ObservableObject {
         }
     }
 
-    // Ensure this function is correctly enclosed within the class scope
-    func fetchAssignments(forCourseId courseId: Int, completion: @escaping ([Assignment]) -> Void) {
-        dataFetcher.fetchAssignments(forCourseId: courseId) { fetchedAssignments in
+    // New function to fetch both courses and their assignments
+    private func fetchCoursesAndAssignments() {
+        fetchCourses()
+        
+        // After courses are fetched, fetch assignments for each course
+        dataFetcher.fetchCourses { [weak self] fetchedCourses in
             DispatchQueue.main.async {
-                // If you have a global assignments variable, update it here:
-                // self?.assignments = fetchedAssignments
-                // Otherwise, use the completion handler to return fetched assignments:
-                completion(fetchedAssignments)
+                self?.courses = fetchedCourses
+                fetchedCourses.forEach { course in
+                    self?.fetchAssignments(forCourseId: course.id)
+                }
             }
         }
     }
-}
-//adding functionality to update priorities changes.
-extension AcademicScheduleViewModel {
+    
+    func fetchAssignments(forCourseId courseId: Int) {
+        dataFetcher.fetchAssignments(forCourseId: courseId) { [weak self] fetchedAssignments in
+            DispatchQueue.main.async {
+                self?.assignmentsByCourseId[courseId] = fetchedAssignments
+            }
+        }
+    }
+    
     func updatePriority(forCourseId id: Int, to newPriority: Course.Priority) {
         if let index = courses.firstIndex(where: { $0.id == id }) {
             courses[index].priority = newPriority
-            // we might also want to save the updated course list to your data store or backend.
+            // Optionally, save the updated course list to your data store or backend here.
         }
     }
 }
-
-
-
-
-
-
