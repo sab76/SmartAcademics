@@ -51,14 +51,14 @@ struct FitnessView: View {
             }
         }
         .onAppear {
-            viewModel.fetchFitnessData()
+            viewModel.fetchFitnessAndActivityData()
         }
     }
     
     func dailySummaryView(data: FitnessData) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Steps: \(data.steps)")
-            Text("Workout Minutes: \(data.workoutMinutes)")
+            Text("Activity Minutes: \(data.activityMinutes)")
             Text("Sleep Hours: \(data.sleepHours) hours")
             Text("Sleep Quality: \(data.sleepQuality)")
             if let activityRecommendation = data.activityRecommendation {

@@ -20,19 +20,18 @@ class FitnessViewModel: ObservableObject {
                 return
             }
             
-            // If authorization is successful, proceed to fetch fitness data
-            self?.fetchFitnessData()
+            // If authorization is successful, proceed to fetch fitness and activity data
+            self?.fetchFitnessAndActivityData()
         }
     }
     
-    func fetchFitnessData() {
+    func fetchFitnessAndActivityData() {
         let dispatchGroup = DispatchGroup()
 
         var stepCount = 0
-        var workoutMinutes = 0
+        var exerciseMinutes = 0 // Replacing workoutMinutes with exerciseMinutes
         var sleepHours = 0.0
-        // Placeholder for sleep quality, as HealthKit does not provide a direct metric.
-        let sleepQuality = "Good"
+        let sleepQuality = "Good" // Placeholder for sleep quality
 
         dispatchGroup.enter()
         healthDataManager.fetchStepCount { fetchedSteps in
@@ -41,8 +40,8 @@ class FitnessViewModel: ObservableObject {
         }
 
         dispatchGroup.enter()
-        healthDataManager.fetchWorkoutMinutes { fetchedWorkoutMinutes in
-            workoutMinutes = fetchedWorkoutMinutes
+        healthDataManager.fetchExerciseMinutes { fetchedExerciseMinutes in
+            exerciseMinutes = fetchedExerciseMinutes
             dispatchGroup.leave()
         }
 
@@ -55,19 +54,13 @@ class FitnessViewModel: ObservableObject {
         // When all async tasks are complete, update the UI
         dispatchGroup.notify(queue: .main) {
             let today = Date()
-            let fitnessData = FitnessData(date: today, steps: stepCount, workoutMinutes: workoutMinutes, sleepHours: Int(sleepHours), sleepQuality: sleepQuality, activityRecommendation: nil, studyLocationRecommendation: nil, averageHeartRate: 0, workouts: [])
+            let fitnessData = FitnessData(date: today, steps: stepCount, activityMinutes: Int(exerciseMinutes), sleepHours: Int(sleepHours), sleepQuality: sleepQuality, activityRecommendation: nil, studyLocationRecommendation: nil)
             // Update your observed data array, this example simply sets it with the new data
             self.data = [fitnessData]
             //debugging
             dispatchGroup.notify(queue: .main) {
-                print("Fetched Data - Steps: \(stepCount), Workout Minutes: \(workoutMinutes), Sleep Hours: \(sleepHours)")
-                
+                print("Fetched Data - Steps: \(stepCount), Activity Minutes: \(exerciseMinutes), Sleep Hours: \(sleepHours)")
             }
-
         }
     }
-
 }
-
-
-

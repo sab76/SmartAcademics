@@ -9,15 +9,22 @@ struct FitnessData: Identifiable {
     var id = UUID()
     var date: Date
     var steps: Int
-    var workoutMinutes: Int
+    var activityMinutes: Int
     var sleepHours: Int
     var sleepQuality: String
     var activityRecommendation: String?
     var studyLocationRecommendation: String?
-    // Add new fields for heart rate and workouts
-    var averageHeartRate: Int
-    var workouts: [WorkoutData]
 }
+/*
+let fitnessData = FitnessData(
+    date: today,
+    steps: stepCount,
+    activityMinutes: exerciseMinutes, // Ensure this matches the new parameter name
+    sleepHours: Int(sleepHours),
+    sleepQuality: sleepQuality,
+    // Remove any parameters no longer expected
+    // Add any new parameters that are now expected
+)*/
 
 
 
