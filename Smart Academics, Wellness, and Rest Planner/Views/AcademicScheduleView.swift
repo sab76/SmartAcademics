@@ -39,24 +39,6 @@ struct AcademicScheduleView: View {
 
 
 
- //   func scheduleStudySession(for assignment: Assignment) {
-  //      guard let dueDate = assignment.dueAt, isAccessGranted else { return }
-        
-   //     let event = EKEvent(eventStore: eventStore)
-  //      event.title = "Study Session for \(assignment.name)"
-   //     event.startDate = Calendar.current.date(byAdding: .day, value: -3, to: dueDate)
-    //    event.endDate = event.startDate?.addingTimeInterval(2 * 60 * 60) // 2 hours
-    //    event.calendar = eventStore.defaultCalendarForNewEvents
-        
-    //    do {
-     //       try eventStore.save(event, span: .thisEvent)
-        //    print("Study session scheduled in your calendar.")
-     //   } catch {
-    //      print("Failed to save the event: \(error.localizedDescription)")
-      //  }
-    //}
-//}
-
 
 
 

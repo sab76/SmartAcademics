@@ -5,6 +5,7 @@ class FitnessViewModel: ObservableObject {
     @Published var data: [FitnessData] = []
     @Published var showWellnessInsights: Bool = false
     @Published var wellnessInsights: String = ""
+    @Published var sleepData: [SleepData] = []
     
     private var healthDataManager: HealthDataManager
     

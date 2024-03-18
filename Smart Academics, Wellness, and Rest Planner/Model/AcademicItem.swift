@@ -10,5 +10,6 @@ struct AcademicItem: Identifiable {
     var title: String
     var deadline: Date
     var description: String
+    var points: Int
 }
 

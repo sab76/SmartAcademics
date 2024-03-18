@@ -15,16 +15,7 @@ struct FitnessData: Identifiable {
     var activityRecommendation: String?
     var studyLocationRecommendation: String?
 }
-/*
-let fitnessData = FitnessData(
-    date: today,
-    steps: stepCount,
-    activityMinutes: exerciseMinutes, // Ensure this matches the new parameter name
-    sleepHours: Int(sleepHours),
-    sleepQuality: sleepQuality,
-    // Remove any parameters no longer expected
-    // Add any new parameters that are now expected
-)*/
+
 
 
 

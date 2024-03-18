@@ -18,3 +18,9 @@ struct RestPreferences {
     var quietHoursStart: Date
     var quietHoursEnd: Date
 }
+
+struct AggregatedRestData {
+    var date: Date
+    var totalHoursSlept: Double
+}
+

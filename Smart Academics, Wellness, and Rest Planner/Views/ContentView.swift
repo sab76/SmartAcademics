@@ -5,13 +5,31 @@ import EventKit
 struct ContentView: View {
     private let healthDataManager = HealthDataManager()
     
-    // Directly instantiate view models as @StateObject with HealthDataManager
-    @StateObject var restViewModel = RestViewModel(healthDataManager: HealthDataManager())
-    @StateObject var fitnessViewModel = FitnessViewModel(healthDataManager: HealthDataManager())
-    @StateObject var academicViewModel = AcademicScheduleViewModel(dataFetcher: APIDataFetcher())
+    @StateObject var restViewModel: RestViewModel
+    @StateObject var fitnessViewModel: FitnessViewModel
+    @StateObject var academicViewModel: AcademicScheduleViewModel
+    @StateObject var recommendationViewModel: RecommendationViewModel
+
+    init() {
+        let healthDataManager = HealthDataManager()
+        let academicViewModel = AcademicScheduleViewModel(dataFetcher: APIDataFetcher())
+        let fitnessViewModel = FitnessViewModel(healthDataManager: healthDataManager)
+        let restViewModel = RestViewModel(healthDataManager: healthDataManager)
+        let recommendationViewModel = RecommendationViewModel(academicViewModel: academicViewModel, fitnessViewModel: fitnessViewModel, restViewModel: restViewModel)
+
+        _academicViewModel = StateObject(wrappedValue: academicViewModel)
+        _fitnessViewModel = StateObject(wrappedValue: fitnessViewModel)
+        _restViewModel = StateObject(wrappedValue: restViewModel)
+        _recommendationViewModel = StateObject(wrappedValue: recommendationViewModel)
+    }
 
     var body: some View {
         TabView {
+            RecommendationView(viewModel: recommendationViewModel)
+                .tabItem {
+                    Image(systemName: "lightbulb")
+                    Text("Recommendation")
+                }
             CoursesView(viewModel: academicViewModel)
                 .tabItem {
                     Image(systemName: "calendar")
@@ -38,5 +56,3 @@ struct ContentView: View {
         }
     }
 }
-
-

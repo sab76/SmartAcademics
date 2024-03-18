@@ -6,17 +6,15 @@ import Foundation
 import SwiftUI
 
 struct RestView: View {
-    @ObservedObject var viewModel: RestViewModel  // Changed to accept viewModel from outside
+    @ObservedObject var viewModel: RestViewModel
 
     var body: some View {
         List {
-            ForEach(viewModel.data) { data in
+            ForEach(viewModel.aggregatedData) { data in
                 VStack(alignment: .leading) {
                     Text("Date: \(data.date, formatter: itemFormatter)")
-                    Text("Hours Slept: \(data.hoursSlept, specifier: "%.2f") hours")
-                    Text("Sleep State: \(data.sleepState == .inBed ? "In Bed" : "Asleep")")
-                        .padding(.top, 2)
-                    
+                    Text("Total Hours Slept in Last 24 Hours: \(data.totalHoursSlept, specifier: "%.2f") hours")
+                    Text("Predominant Sleep State: \(data.predominantSleepState == .inBed ? "In Bed" : "Asleep")")
                 }
                 .padding()
                 .background(Color.blue.opacity(0.1))
@@ -34,3 +32,4 @@ private let itemFormatter: DateFormatter = {
     formatter.timeStyle = .none
     return formatter
 }()
+

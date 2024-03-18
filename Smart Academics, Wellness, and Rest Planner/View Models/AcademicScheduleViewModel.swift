@@ -51,3 +51,5 @@ class AcademicScheduleViewModel: ObservableObject {
         }
     }
 }
+
+

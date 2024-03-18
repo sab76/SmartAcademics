@@ -21,6 +21,9 @@
 		691407422B896F8A003210C8 /*  RecommendationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407412B896F8A003210C8 /*  RecommendationEngine.swift */; };
 		691407442B897139003210C8 /* SleepData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691407432B897139003210C8 /* SleepData.swift */; };
 		693E34662B8A114000420B3C /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E34652B8A114000420B3C /* CourseView.swift */; };
+		697843C02BA4198800E3870C /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697843BF2BA4198800E3870C /* RecommendationView.swift */; };
+		697843C22BA41BBA00E3870C /* RecommendationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697843C12BA41BBA00E3870C /* RecommendationViewModel.swift */; };
+		697843C42BA7CCD600E3870C /* RecommendationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697843C32BA7CCD600E3870C /* RecommendationModel.swift */; };
 		6991945D2B8AFC2000876976 /* FitnessGoalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6991945C2B8AFC2000876976 /* FitnessGoalSettings.swift */; };
 		699194602B8AFCC700876976 /* FitnessGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6991945F2B8AFCC700876976 /* FitnessGoal.swift */; };
 		699194622B8AFD0C00876976 /* FitnessGoalSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699194612B8AFD0C00876976 /* FitnessGoalSetting.swift */; };
@@ -83,6 +86,9 @@
 		691407412B896F8A003210C8 /*  RecommendationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " RecommendationEngine.swift"; sourceTree = "<group>"; };
 		691407432B897139003210C8 /* SleepData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepData.swift; sourceTree = "<group>"; };
 		693E34652B8A114000420B3C /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		697843BF2BA4198800E3870C /* RecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationView.swift; sourceTree = "<group>"; };
+		697843C12BA41BBA00E3870C /* RecommendationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewModel.swift; sourceTree = "<group>"; };
+		697843C32BA7CCD600E3870C /* RecommendationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationModel.swift; sourceTree = "<group>"; };
 		6991945C2B8AFC2000876976 /* FitnessGoalSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessGoalSettings.swift; sourceTree = "<group>"; };
 		6991945F2B8AFCC700876976 /* FitnessGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessGoal.swift; sourceTree = "<group>"; };
 		699194612B8AFD0C00876976 /* FitnessGoalSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessGoalSetting.swift; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 				6914072D2B895451003210C8 /* FitnessData.swift */,
 				699795B92B9FDCDB0066AD7B /* WorkoutData.swift */,
 				699795BB2B9FDD1E0066AD7B /* HeartRateData.swift */,
+				697843C32BA7CCD600E3870C /* RecommendationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +182,7 @@
 				6991945C2B8AFC2000876976 /* FitnessGoalSettings.swift */,
 				699194632B8EA96200876976 /* CanvasIntegrationSettingsView.swift */,
 				699194652B8EEB8C00876976 /* RestPreferencesView.swift */,
+				697843BF2BA4198800E3870C /* RecommendationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +195,7 @@
 				691407272B87E69F003210C8 /* AcademicScheduleViewModel.swift */,
 				69B4A2822B89E7E9002F1404 /* Course.swift */,
 				699194612B8AFD0C00876976 /* FitnessGoalSetting.swift */,
+				697843C12BA41BBA00E3870C /* RecommendationViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -424,6 +433,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				697843C42BA7CCD600E3870C /* RecommendationModel.swift in Sources */,
+				697843C22BA41BBA00E3870C /* RecommendationViewModel.swift in Sources */,
 				691407342B895492003210C8 /* RestViewModel.swift in Sources */,
 				693E34662B8A114000420B3C /* CourseView.swift in Sources */,
 				699795BC2B9FDD1E0066AD7B /* HeartRateData.swift in Sources */,
@@ -459,6 +470,7 @@
 				6914073E2B896EC4003210C8 /* HealthDataManager.swift in Sources */,
 				69B32CB22B86F49400600772 /* Smart_Academics__Wellness__and_Rest_PlannerApp.swift in Sources */,
 				691407362B8954B3003210C8 /* FitnessView.swift in Sources */,
+				697843C02BA4198800E3870C /* RecommendationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
