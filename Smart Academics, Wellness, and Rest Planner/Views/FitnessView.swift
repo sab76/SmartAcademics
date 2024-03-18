@@ -9,46 +9,49 @@ extension Date {
 }
 
 struct FitnessView: View {
-    @ObservedObject var viewModel: FitnessViewModel  // Adjusted to accept viewModel from outside
+    @ObservedObject var viewModel: FitnessViewModel
     
     @State private var selectedDate: Date? = Date()
     
     var body: some View {
-        VStack {
-            if viewModel.showWellnessInsights {
-                GroupBox(label: Text("Wellness Insights")) {
-                    Text(viewModel.wellnessInsights)
-                        .padding()
+        NavigationView {
+            VStack {
+                if viewModel.showWellnessInsights {
+                    GroupBox(label: Text("Wellness Insights")) {
+                        Text(viewModel.wellnessInsights)
+                            .padding()
+                    }
+                    .padding()
                 }
-                .padding()
-            }
-            
-            TabView {
-                ForEach(viewModel.data.filter { $0.date.isSameDay(as: selectedDate ?? Date()) }) { data in
-                    dailySummaryView(data: data)
-                        .tabItem {
-                            Image(systemName: "calendar")
-                            Text("\(data.date, formatter: Self.dateFormatter)")
-                        }
-                }
-            }
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(viewModel.data, id: \.id) { data in
-                        Button(action: {
-                            self.selectedDate = data.date
-                        }) {
-                            Text("\(data.date, formatter: Self.dateFormatter)")
-                                .padding()
-                                .background(self.selectedDate == data.date ? Color.blue : Color.gray)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        }
+                
+                TabView {
+                    ForEach(viewModel.data.filter { $0.date.isSameDay(as: selectedDate ?? Date()) }) { data in
+                        dailySummaryView(data: data)
+                            .tabItem {
+                                Image(systemName: "calendar")
+                                Text("\(data.date, formatter: Self.dateFormatter)")
+                            }
                     }
                 }
-                .padding()
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(viewModel.data, id: \.id) { data in
+                            Button(action: {
+                                self.selectedDate = data.date
+                            }) {
+                                Text("\(data.date, formatter: Self.dateFormatter)")
+                                    .padding()
+                                    .background(self.selectedDate == data.date ? Color.blue : Color.gray)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                            }
+                        }
+                    }
+                    .padding()
+                }
             }
+            .navigationTitle("Fitness")
         }
         .onAppear {
             viewModel.fetchFitnessAndActivityData()
@@ -77,5 +80,3 @@ struct FitnessView: View {
         return formatter
     }()
 }
-
-// Assume Date extension remains unchanged

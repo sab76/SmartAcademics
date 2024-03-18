@@ -95,10 +95,8 @@ class HealthDataManager {
         }
         
         let now = Date()
-        let startOfDay = Calendar.current.startOfDay(for: now)
-        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
+        let predicate = HKQuery.predicateForSamples(withStart: Calendar.current.date(byAdding: .hour, value: -100, to: now)!, end: now, options: .strictStartDate)
         
-        // Create an NSSortDescriptor to order the samples by start date
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
         
         let query = HKSampleQuery(sampleType: sleepType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: [sortDescriptor]) { _, results, error in
@@ -111,7 +109,6 @@ class HealthDataManager {
             let totalHours = results?.reduce(0.0) { (acc, sample) -> Double in
                 guard let sleepAnalysis = sample as? HKCategorySample else { return acc }
                 
-                // Only count time asleep; exclude inBed time if desired
                 if sleepAnalysis.value == HKCategoryValueSleepAnalysis.asleepUnspecified.rawValue ||
                    sleepAnalysis.value == HKCategoryValueSleepAnalysis.asleepDeep.rawValue ||
                    sleepAnalysis.value == HKCategoryValueSleepAnalysis.asleepREM.rawValue {
@@ -128,6 +125,7 @@ class HealthDataManager {
         
         healthStore.execute(query)
     }
+
     
     // Existing methods for fetching step count and sleep analysis...
     func fetchWorkouts(completion: @escaping ([WorkoutData]) -> Void) {
@@ -179,4 +177,3 @@ class HealthDataManager {
         healthStore.execute(query)
     }
 }
-

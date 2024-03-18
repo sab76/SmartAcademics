@@ -10,7 +10,7 @@ import EventKit
 import Foundation
 
 class APIDataFetcher: AcademicDataFetching {
-    let accessToken = "4407~PcTNNysqfj5aXaHeGpFswT3SJEhf7iY8KDvxoguhYLVciBUu44zF8Low0B9CXpsw"
+    let accessToken = ""
     let baseURL = "https://canvas.eee.uci.edu/api/v1/"
     
     func fetchCourses(completion: @escaping ([Course]) -> Void) {
@@ -65,10 +65,9 @@ class APIDataFetcher: AcademicDataFetching {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
                 var assignments = try decoder.decode([Assignment].self, from: data)
-                
-                // Check if the course ID matches 61020 and fetch the specific assignment
-                if courseId == 61020 {
-                    let specificAssignmentURL = URL(string: "\(self.baseURL)courses/\(courseId)/assignments/1295368?access_token=\(self.accessToken)")!
+
+                if courseId == 61901 {
+                    let specificAssignmentURL = URL(string: "\(self.baseURL)courses/\(courseId)/assignments/1339752?access_token=\(self.accessToken)")!
                     let specificAssignmentTask = URLSession.shared.dataTask(with: specificAssignmentURL) { specificData, specificResponse, specificError in
                         guard let specificData = specificData, specificError == nil else {
                             print("Error fetching the specific assignment: \(specificError?.localizedDescription ?? "Unknown error")")

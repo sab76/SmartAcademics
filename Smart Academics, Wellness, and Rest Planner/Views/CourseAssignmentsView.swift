@@ -64,12 +64,14 @@ struct CourseAssignmentsView: View {
                 // Keep the assignment if it has not been submitted yet OR its due date is in the future
                 (assignment.dueAt != nil && assignment.dueAt! > now)
             }
-            
+            .sorted(by: { $0.dueAt! < $1.dueAt! }) // Sorting assignments by due date
+
             DispatchQueue.main.async {
                 self.assignments = filteredAssignments
             }
         }
     }
+
 
 
     private func decodeAssignments(from data: Data) {

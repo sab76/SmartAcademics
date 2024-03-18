@@ -13,9 +13,7 @@ struct RecommendationView: View {
     @ObservedObject var viewModel: RecommendationViewModel
     
     var body: some View {
-        VStack {
-            Text("Recommendations")
-                .font(.largeTitle)
+        NavigationView {
             List(viewModel.recommendations) { recommendation in
                 VStack(alignment: .leading) {
                     Text(recommendation.title)
@@ -25,6 +23,7 @@ struct RecommendationView: View {
                 }
                 .padding()
             }
+            .navigationTitle("Recommendations")
         }
         .onAppear {
             viewModel.updateRecommendations()

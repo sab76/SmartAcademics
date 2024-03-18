@@ -27,27 +27,45 @@ class RestViewModel: ObservableObject {
         
         let now = Date()
         let startOfPreviousDay = Calendar.current.startOfDay(for: now).addingTimeInterval(-24 * 60 * 60)
-        let predicate = HKQuery.predicateForSamples(withStart: startOfPreviousDay, end: now, options: .strictStartDate)
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
-        
-        let query = HKSampleQuery(sampleType: sleepType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: [sortDescriptor]) { [weak self] (query, results, error) in
-            guard let self = self, let sleepResults = results as? [HKCategorySample], error == nil else {
+        let predicate = HKQuery.predicateForSamples(withStart: startOfPreviousDay, end: now, options: [.strictStartDate, .strictEndDate])
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: true)
+
+        let query = HKSampleQuery(sampleType: sleepType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: [sortDescriptor]) { [weak self] (_, results, error) in
+            guard let self = self, error == nil else {
                 print("Failed to fetch sleep data: \(String(describing: error))")
                 return
             }
             
-            let newData = sleepResults.map { sample -> SleepData in
-                let hoursSlept = sample.endDate.timeIntervalSince(sample.startDate) / 3600 // Convert seconds to hours
-                let sleepState = HKCategoryValueSleepAnalysis(rawValue: sample.value) ?? .inBed // Handle the optional with a default value
-                return SleepData(date: sample.startDate, hoursSlept: hoursSlept, sleepState: sleepState)
-            }
+            let filteredResults = results as? [HKCategorySample] ?? []
+            let sleepData = self.processSleepData(filteredResults)
             
-            // Call aggregateData to process and store the fetched data
-            self.aggregateData(sleepData: newData)
+            DispatchQueue.main.async {
+                self.data = sleepData
+                self.updateAggregatedData()
+            }
         }
         
         healthDataManager.healthStore.execute(query)
     }
+
+    private func processSleepData(_ sleepResults: [HKCategorySample]) -> [SleepData] {
+        var sleepData: [SleepData] = []
+
+        for sample in sleepResults {
+            switch HKCategoryValueSleepAnalysis(rawValue: sample.value) {
+            case .asleepDeep, .asleepCore, .asleepREM, .asleepUnspecified:
+                let hoursSlept = sample.endDate.timeIntervalSince(sample.startDate) / 3600
+                let data = SleepData(date: sample.startDate, hoursSlept: hoursSlept, sleepState: HKCategoryValueSleepAnalysis(rawValue: sample.value) ?? .inBed)
+                sleepData.append(data)
+            default:
+                break // Skip in-bed or awake times if only calculating sleep time
+            }
+        }
+
+        return sleepData
+    }
+
+
     private func updateAggregatedData() {
             self.aggregatedData = aggregateData(sleepData: self.data)
         }
@@ -58,12 +76,11 @@ class RestViewModel: ObservableObject {
         }
         
         return groupedData.map { (key, value) in
-            AggregatedSleepData(
-                date: key,
-                totalHoursSlept: value.reduce(0) { $0 + $1.hoursSlept },
-                predominantSleepState: predominantState(from: value)
-            )
-        }.sorted(by: { $0.date > $1.date })
+            let totalSleepTime = value.reduce(0) { $0 + $1.hoursSlept }
+            let predominantSleepState = value.max(by: { a, b in a.hoursSlept < b.hoursSlept })?.sleepState ?? .inBed
+            return AggregatedSleepData(date: key, totalHoursSlept: totalSleepTime, predominantSleepState: predominantSleepState)
+        }
+        .sorted(by: { $0.date > $1.date })
     }
 
     
@@ -81,4 +98,3 @@ struct AggregatedSleepData: Identifiable {
     var totalHoursSlept: Double
     var predominantSleepState: HKCategoryValueSleepAnalysis
 }
-

@@ -21,7 +21,7 @@ class RecommendationViewModel: ObservableObject {
     
     func updateRecommendations() {
         // Mapping assignments to AcademicItem
-        var academicItems: [AcademicItem] = academicViewModel.assignmentsByCourseId.flatMap { courseId, assignments in
+        let academicItems: [AcademicItem] = academicViewModel.assignmentsByCourseId.flatMap { courseId, assignments in
             assignments.compactMap { assignment in
                 // Correctly accessing properties from `assignment`
                 AcademicItem(
